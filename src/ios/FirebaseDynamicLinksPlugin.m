@@ -73,7 +73,7 @@
     if (navigationInfo) {
         linkBuilder.navigationInfoParameters = [self getNavigationInfoParameters:navigationInfo];
     }
-//    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
+    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
 //    if (analyticsInfo) {
 //        NSDictionary* googlePlayAnalyticsInfo = params[@"googlePlayAnalytics"];
 //        if (googlePlayAnalyticsInfo) {
