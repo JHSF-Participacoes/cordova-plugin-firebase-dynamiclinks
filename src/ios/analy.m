@@ -73,18 +73,18 @@
     if (navigationInfo) {
         linkBuilder.navigationInfoParameters = [self getNavigationInfoParameters:navigationInfo];
     }
-    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
-    if (analyticsInfo) {
-        NSDictionary* googlePlayAnalyticsInfo = params[@"googlePlayAnalytics"];
-        if (googlePlayAnalyticsInfo) {
-            linkBuilder.analyticsParameters = [self getGoogleAnalyticsParameters:googlePlayAnalyticsInfo];
-        }
-        NSDictionary* itunesConnectAnalyticsInfo = params[@"itunesConnectAnalytics"];
-        if (itunesConnectAnalyticsInfo) {
-            linkBuilder.iTunesConnectParameters = [self getItunesConnectAnalyticsParameters:itunesConnectAnalyticsInfo];
-        }
-    }
-    NSDictionary* socialMetaTagInfo = params[@"socialMetaTagInfo"];
+//    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
+//    if (analyticsInfo) {
+//        NSDictionary* googlePlayAnalyticsInfo = params[@"googlePlayAnalytics"];
+//        if (googlePlayAnalyticsInfo) {
+//            linkBuilder.analyticsParameters = [self getGoogleAnalyticsParameters:googlePlayAnalyticsInfo];
+//        }
+//        NSDictionary* itunesConnectAnalyticsInfo = params[@"itunesConnectAnalytics"];
+//        if (itunesConnectAnalyticsInfo) {
+//            linkBuilder.iTunesConnectParameters = [self getItunesConnectAnalyticsParameters:itunesConnectAnalyticsInfo];
+//        }
+//    }
+//    NSDictionary* socialMetaTagInfo = params[@"socialMetaTagInfo"];
     if (socialMetaTagInfo) {
         linkBuilder.socialMetaTagParameters = [self getSocialMetaTagParameters:socialMetaTagInfo];
     }
@@ -131,23 +131,23 @@
     return result;
 }
 
-- (FIRDynamicLinkGoogleAnalyticsParameters*) getGoogleAnalyticsParameters:(NSDictionary*) googlePlayAnalyticsInfo {
-    FIRDynamicLinkGoogleAnalyticsParameters* result = [[FIRDynamicLinkGoogleAnalyticsParameters alloc] init];
-    result.source = googlePlayAnalyticsInfo[@"utmSource"];
-    result.medium = googlePlayAnalyticsInfo[@"utmMedium"];
-    result.campaign = googlePlayAnalyticsInfo[@"utmCampaign"];
-    result.content = googlePlayAnalyticsInfo[@"utmContent"];
-    result.term = googlePlayAnalyticsInfo[@"utmTerm"];
-    return result;
-}
+//- (FIRDynamicLinkGoogleAnalyticsParameters*) getGoogleAnalyticsParameters:(NSDictionary*) googlePlayAnalyticsInfo {
+//    FIRDynamicLinkGoogleAnalyticsParameters* result = [[FIRDynamicLinkGoogleAnalyticsParameters alloc] init];
+//    result.source = googlePlayAnalyticsInfo[@"utmSource"];
+//    result.medium = googlePlayAnalyticsInfo[@"utmMedium"];
+//    result.campaign = googlePlayAnalyticsInfo[@"utmCampaign"];
+//    result.content = googlePlayAnalyticsInfo[@"utmContent"];
+//    result.term = googlePlayAnalyticsInfo[@"utmTerm"];
+//    return result;
+//}
 
-- (FIRDynamicLinkItunesConnectAnalyticsParameters*) getItunesConnectAnalyticsParameters:(NSDictionary*) itunesConnectAnalyticsInfo {
-    FIRDynamicLinkItunesConnectAnalyticsParameters* result = [[FIRDynamicLinkItunesConnectAnalyticsParameters alloc] init];
-    result.affiliateToken = itunesConnectAnalyticsInfo[@"at"];
-    result.campaignToken = itunesConnectAnalyticsInfo[@"ct"];
-    result.providerToken = itunesConnectAnalyticsInfo[@"pt"];
-    return result;
-}
+//- (FIRDynamicLinkItunesConnectAnalyticsParameters*) getItunesConnectAnalyticsParameters:(NSDictionary*) itunesConnectAnalyticsInfo {
+//    FIRDynamicLinkItunesConnectAnalyticsParameters* result = [[FIRDynamicLinkItunesConnectAnalyticsParameters alloc] init];
+//    result.affiliateToken = itunesConnectAnalyticsInfo[@"at"];
+//    result.campaignToken = itunesConnectAnalyticsInfo[@"ct"];
+//    result.providerToken = itunesConnectAnalyticsInfo[@"pt"];
+//    return result;
+//}
 
 - (FIRDynamicLinkSocialMetaTagParameters*) getSocialMetaTagParameters:(NSDictionary*) socialMetaTagInfo {
     FIRDynamicLinkSocialMetaTagParameters* result = [[FIRDynamicLinkSocialMetaTagParameters alloc] init];

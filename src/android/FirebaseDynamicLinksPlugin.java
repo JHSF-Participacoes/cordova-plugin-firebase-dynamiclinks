@@ -9,9 +9,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.dynamiclinks.DynamicLink;
 import com.google.firebase.dynamiclinks.DynamicLink.AndroidParameters;
-import com.google.firebase.dynamiclinks.DynamicLink.GoogleAnalyticsParameters;
+//import com.google.firebase.dynamiclinks.DynamicLink.GoogleAnalyticsParameters;
 import com.google.firebase.dynamiclinks.DynamicLink.IosParameters;
-import com.google.firebase.dynamiclinks.DynamicLink.ItunesConnectAnalyticsParameters;
+//import com.google.firebase.dynamiclinks.DynamicLink.ItunesConnectAnalyticsParameters;
 import com.google.firebase.dynamiclinks.DynamicLink.NavigationInfoParameters;
 import com.google.firebase.dynamiclinks.DynamicLink.SocialMetaTagParameters;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
@@ -119,17 +119,17 @@ public class FirebaseDynamicLinksPlugin extends ReflectiveCordovaPlugin {
             builder.setNavigationInfoParameters(getNavigationInfoParameters(navigationInfo));
         }
 
-        JSONObject analyticsInfo = params.optJSONObject("analyticsInfo");
-        if (analyticsInfo != null) {
-            JSONObject googlePlayAnalyticsInfo = analyticsInfo.optJSONObject("googlePlayAnalytics");
-            if (googlePlayAnalyticsInfo != null) {
-                builder.setGoogleAnalyticsParameters(getGoogleAnalyticsParameters(googlePlayAnalyticsInfo));
-            }
-            JSONObject itunesConnectAnalyticsInfo = analyticsInfo.optJSONObject("itunesConnectAnalytics");
-            if (itunesConnectAnalyticsInfo != null) {
-                builder.setItunesConnectAnalyticsParameters(getItunesConnectAnalyticsParameters(itunesConnectAnalyticsInfo));
-            }
-        }
+        // JSONObject analyticsInfo = params.optJSONObject("analyticsInfo");
+        // if (analyticsInfo != null) {
+        //     JSONObject googlePlayAnalyticsInfo = analyticsInfo.optJSONObject("googlePlayAnalytics");
+        //     if (googlePlayAnalyticsInfo != null) {
+        //         builder.setGoogleAnalyticsParameters(getGoogleAnalyticsParameters(googlePlayAnalyticsInfo));
+        //     }
+        //     JSONObject itunesConnectAnalyticsInfo = analyticsInfo.optJSONObject("itunesConnectAnalytics");
+        //     if (itunesConnectAnalyticsInfo != null) {
+        //         builder.setItunesConnectAnalyticsParameters(getItunesConnectAnalyticsParameters(itunesConnectAnalyticsInfo));
+        //     }
+        // }
 
         JSONObject socialMetaTagInfo = params.optJSONObject("socialMetaTagInfo");
         if (socialMetaTagInfo != null) {
@@ -177,23 +177,23 @@ public class FirebaseDynamicLinksPlugin extends ReflectiveCordovaPlugin {
         return navigationInfoBuilder.build();
     }
 
-    private GoogleAnalyticsParameters getGoogleAnalyticsParameters(JSONObject googlePlayAnalyticsInfo) {
-        GoogleAnalyticsParameters.Builder gaInfoBuilder = new GoogleAnalyticsParameters.Builder();
-        gaInfoBuilder.setSource(googlePlayAnalyticsInfo.optString("utmSource"));
-        gaInfoBuilder.setMedium(googlePlayAnalyticsInfo.optString("utmMedium"));
-        gaInfoBuilder.setCampaign(googlePlayAnalyticsInfo.optString("utmCampaign"));
-        gaInfoBuilder.setContent(googlePlayAnalyticsInfo.optString("utmContent"));
-        gaInfoBuilder.setTerm(googlePlayAnalyticsInfo.optString("utmTerm"));
-        return gaInfoBuilder.build();
-    }
+    // private GoogleAnalyticsParameters getGoogleAnalyticsParameters(JSONObject googlePlayAnalyticsInfo) {
+    //     GoogleAnalyticsParameters.Builder gaInfoBuilder = new GoogleAnalyticsParameters.Builder();
+    //     gaInfoBuilder.setSource(googlePlayAnalyticsInfo.optString("utmSource"));
+    //     gaInfoBuilder.setMedium(googlePlayAnalyticsInfo.optString("utmMedium"));
+    //     gaInfoBuilder.setCampaign(googlePlayAnalyticsInfo.optString("utmCampaign"));
+    //     gaInfoBuilder.setContent(googlePlayAnalyticsInfo.optString("utmContent"));
+    //     gaInfoBuilder.setTerm(googlePlayAnalyticsInfo.optString("utmTerm"));
+    //     return gaInfoBuilder.build();
+    // }
 
-    private ItunesConnectAnalyticsParameters getItunesConnectAnalyticsParameters(JSONObject itunesConnectAnalyticsInfo) {
-        ItunesConnectAnalyticsParameters.Builder iosAnalyticsInfo = new ItunesConnectAnalyticsParameters.Builder();
-        iosAnalyticsInfo.setAffiliateToken(itunesConnectAnalyticsInfo.optString("at"));
-        iosAnalyticsInfo.setCampaignToken(itunesConnectAnalyticsInfo.optString("ct"));
-        iosAnalyticsInfo.setProviderToken(itunesConnectAnalyticsInfo.optString("pt"));
-        return iosAnalyticsInfo.build();
-    }
+    // private ItunesConnectAnalyticsParameters getItunesConnectAnalyticsParameters(JSONObject itunesConnectAnalyticsInfo) {
+    //     ItunesConnectAnalyticsParameters.Builder iosAnalyticsInfo = new ItunesConnectAnalyticsParameters.Builder();
+    //     iosAnalyticsInfo.setAffiliateToken(itunesConnectAnalyticsInfo.optString("at"));
+    //     iosAnalyticsInfo.setCampaignToken(itunesConnectAnalyticsInfo.optString("ct"));
+    //     iosAnalyticsInfo.setProviderToken(itunesConnectAnalyticsInfo.optString("pt"));
+    //     return iosAnalyticsInfo.build();
+    // }
 
     private SocialMetaTagParameters getSocialMetaTagParameters(JSONObject socialMetaTagInfo) throws JSONException {
         SocialMetaTagParameters.Builder socialInfoBuilder = new SocialMetaTagParameters.Builder();

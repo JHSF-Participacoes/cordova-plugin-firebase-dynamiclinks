@@ -21,7 +21,7 @@
 
 - iOS
 - Android
- 
+
 ## Installation
 
     $ cordova plugin add cordova-plugin-firebase-dynamiclinks --variable PAGE_LINK_DOMAIN="mydomain.page.link"
@@ -99,20 +99,6 @@ Any create method supports all options below to customize a returned dynamic lin
   },
   "navigationInfo": {
     "enableForcedRedirect": boolean,
-  },
-  "analyticsInfo": {
-    "googlePlayAnalytics": {
-      "utmSource": string,
-      "utmMedium": string,
-      "utmCampaign": string,
-      "utmTerm": string,
-      "utmContent": string
-    },
-    "itunesConnectAnalytics": {
-      "at": string,
-      "ct": string,
-      "pt": string
-    }
   },
   "socialMetaTagInfo": {
     "socialTitle": string,
