@@ -73,7 +73,7 @@
     if (navigationInfo) {
         linkBuilder.navigationInfoParameters = [self getNavigationInfoParameters:navigationInfo];
     }
-    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
+//    NSDictionary* analyticsInfo = params[@"analyticsInfo"];
 //    if (analyticsInfo) {
 //        NSDictionary* googlePlayAnalyticsInfo = params[@"googlePlayAnalytics"];
 //        if (googlePlayAnalyticsInfo) {
@@ -84,7 +84,7 @@
 //            linkBuilder.iTunesConnectParameters = [self getItunesConnectAnalyticsParameters:itunesConnectAnalyticsInfo];
 //        }
 //    }
-//    NSDictionary* socialMetaTagInfo = params[@"socialMetaTagInfo"];
+    NSDictionary* socialMetaTagInfo = params[@"socialMetaTagInfo"];
     if (socialMetaTagInfo) {
         linkBuilder.socialMetaTagParameters = [self getSocialMetaTagParameters:socialMetaTagInfo];
     }
